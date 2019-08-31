@@ -11,7 +11,8 @@ body {
 
 .main {
   height: 50vh;
-  background: right bottom / contain no-repeat url('/portfolio/assets/image.png'),
+  background: right bottom / contain no-repeat
+      url('https://s3.us-east-2.amazonaws.com/davidtraverso.com/images/image.png'),
     linear-gradient(to bottom right, rgb(36, 36, 36), #ffffff);
   color: white;
   padding: 40px;
