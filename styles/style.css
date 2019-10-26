@@ -5,21 +5,27 @@ body {
   line-height: 0;
 }
 
-.navbar {
-  height: 3em;
-}
-
 .main {
-  height: 50vh;
+  height: 70vh;
   background: right bottom / contain no-repeat
       url('https://s3.us-east-2.amazonaws.com/davidtraverso.com/images/image.png'),
-    linear-gradient(to bottom right, rgb(36, 36, 36), #ffffff);
+    linear-gradient(to bottom right, rgb(12, 61, 199), #b1c7f8);
   color: white;
   padding: 40px;
 }
 
+/* LinkedIn + Github */
+.links > li {
+  float: left;
+  padding: 0px 5px;
+  list-style: none;
+  text-decoration: none;
+  color: white;
+}
+
+/* Tech icon bar */
 .hero {
-  height: 50vh;
+  height: 15vh;
   background-image: linear-gradient(to bottom right, blue, #00ffff);
   color: white;
 }
@@ -41,51 +47,9 @@ body {
   list-style: none;
 }
 
-.fab:hover,
-.fas:hover {
+.dab:hover {
   margin: -8px 0px;
   color: rgb(119, 255, 146);
-}
-
-/* Typewriter */
-/* 
-.typewrap {
-  width: 20em;
-  margin: 4em 0;
-}
-
-.typewriter h1 {
-  overflow: hidden; /* Ensures the content is not revealed until the animation 
-  border-right: 0.15em solid #0091ff; /* The typwriter cursor 
-  white-space: nowrap; /* Keeps the content on a single line 
-  margin: 0; /* Gives that scrolling effect as the typing happens 
-  animation: typing .5s steps(100, end), blink-caret 0.75s step-end infinite;
-  color: white;
-}
-
- The typing effect
-@keyframes typing {
-  from {
-    width: 0;
-  }
-  to {
-    width: 100%;
-  }
-}
-
-The cursor effect:
-@keyframes blink-caret {
-  from,
-  to {
-    border-color: transparent;
-  }
-  100% {
-    border-color: #0091ff;
-  }
-} */
-
-.title {
-  padding: 2em 0 0 0;
 }
 
 hr {
