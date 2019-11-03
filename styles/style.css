@@ -1,57 +1,108 @@
 html,
 body {
+  background: url(https://s3.us-east-2.amazonaws.com/davidtraverso.com/images/eberhard-grossgasteiger-nDjXr9XpHDk-unsplash.jpg)
+    no-repeat;
+  background-size: cover;
+  background-position: bottom 30% left;
   margin: 0;
   padding: 0;
-  line-height: 0;
+  font-family: 'Signika', sans-serif;
 }
 
-.main {
-  height: 70vh;
-  background: right bottom / contain no-repeat
-      url('https://s3.us-east-2.amazonaws.com/davidtraverso.com/images/image.png'),
-    linear-gradient(to bottom right, rgb(12, 61, 199), #b1c7f8);
-  color: white;
-  padding: 40px;
+/* Navigation */
+.nav {
+  margin: 1.5em 1em;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas: 'site links';
+  font-size: 1.25em;
 }
 
-/* LinkedIn + Github */
-.links > li {
-  float: left;
-  padding: 0px 5px;
+.nav ul {
   list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav li {
+  float: left;
+  margin: 0 0.75em;
+}
+
+#siteNav {
+  grid-area: site;
+  width: 100%;
+}
+
+#siteNav li {
+  color: white;
+  padding: 0.25em 0.5em;
+  border-bottom: 1px solid white;
+}
+
+#siteNav li:hover {
+  border-bottom: 3px solid white;
+}
+
+#extLinks {
+  grid-area: links;
+  width: 100%;
+}
+
+#extLinks li {
+  color: white;
+  float: right;
+  margin: 0 0.5em;
+  font-size: 1.5em;
+}
+
+a:link,
+a:visited {
+  color: white;
   text-decoration: none;
-  color: white;
 }
 
-/* Tech icon bar */
+#extLinks a:hover {
+  color: white;
+  border-bottom: 1px solid white;
+}
+/* ~ END ~ Navigation*/
+
+/* Main */
+.main {
+  height: 80vh;
+  color: white;
+  display: grid;
+  grid-template-columns: 0.5fr 2fr 2fr 1fr;
+  grid-template-rows: 1;
+  grid-template-areas: '. hero . .';
+}
+
 .hero {
-  height: 15vh;
-  background-image: linear-gradient(to bottom right, blue, #00ffff);
-  color: white;
+  grid-area: hero;
+  margin: 25vh 0;
+  padding: 1.15em;
+  text-align: left;
+  font-size: 2em;
 }
 
-.tech-icons {
-  list-style: none;
-  color: white;
-  margin: 40px;
-  display: inline-block;
+.heroText {
+  background: rgba(0, 0, 0, 0.3);
+  padding: 1.15em;
 }
 
-.tech-icons li span {
-  position: relative;
+.heroText p {
+  font-size: 1em;
 }
+/*  ~ END ~ Main*/
 
-.icons > li {
-  float: left;
-  padding: 10px 20px;
-  list-style: none;
-}
-
-.dab:hover {
-  margin: -8px 0px;
-  color: rgb(119, 255, 146);
-}
-
-hr {
+/* Footer */
+.footer {
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  height: 12vh;
+  border-top: 3px solid white;
+  text-align: center;
   color: white;
 }
