@@ -1,7 +1,15 @@
+:root {
+  --text-main: rgb(20, 20, 20);
+  --text-hover: rgb(100, 100, 100);
+  --color-main: #81c784;
+  --color-light: #c8e6c9;
+}
+
 html,
 body {
-  background: url(https://s3.us-east-2.amazonaws.com/davidtraverso.com/images/eberhard-grossgasteiger-nDjXr9XpHDk-unsplash.jpg)
-    no-repeat;
+  /* background: url(https://s3.us-east-2.amazonaws.com/davidtraverso.com/images/eberhard-grossgasteiger-nDjXr9XpHDk-unsplash.jpg)
+    no-repeat; */
+  /* background: linear-gradient(-90deg, #f8ff00 0%, #3ad59f 100%); */
   background-size: cover;
   background-position: bottom 30% left;
   margin: 0;
@@ -10,22 +18,22 @@ body {
 }
 
 /* Navigation */
-.nav {
+nav {
   margin: 1.5em 1em;
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-areas: 'site links';
-  font-size: 1.25em;
+  font-size: 1.5em;
 }
 
-.nav ul {
+nav ul {
   list-style: none;
   margin: 0;
   padding: 0;
 }
 
-.nav li {
-  margin: 0 0.75em;
+nav li {
+  margin: 0 0.2rem;
 }
 
 #siteNav {
@@ -34,13 +42,14 @@ body {
 }
 
 #siteNav li {
-  padding: 0.25em 0.5em;
+  display: inline;
+  padding: 0.25rem 0.75rem;
   /* border-bottom: 1px solid #5E423B; */
 }
 
 #siteNav a:hover {
-  /* border-bottom: 3px solid #5E423B; */
-  color: #94734D;
+  /* border-bottom: 2px solid #5E423B; */
+  color: var(--text-hover);
 }
 
 #extLinks {
@@ -49,51 +58,97 @@ body {
 }
 
 #extLinks li {
-  color: #62403C;
+  color: var(--text-main);
   float: right;
-  margin: 0 0.5em;
-  font-size: 1.5em;
+  margin: 0 0.75rem;
+  font-size: 2rem;
 }
 
 a:link,
 a:visited {
-  color: #864B3E;
+  color: var(--text-main);
   text-decoration: none;
 }
 
 #extLinks a:hover {
-  color: #864B3E;
-  border-bottom: 1px solid #5E423B;
+  color: var(--text-hover);
+  /* border-bottom: 2px solid #5e423b; */
 }
 /* ~ END ~ Navigation*/
+
+.hoverable:hover {
+  border-bottom: 2px solid black;
+}
 
 /* Main */
 .main {
   height: 80vh;
-  color: white;
+  width: 100vw;
+  color: var(--text-main);
   display: grid;
-  grid-template-columns: 1fr 1fr 1.5fr 1fr;
+  grid-template-columns: 1fr 13fr 1fr;
   grid-template-rows: 1;
-  grid-template-areas: '. . hero .';
+  grid-template-areas: '. hero .';
+  align-items: start;
 }
 
 .hero {
   grid-area: hero;
-  margin: 5vh 0;
-  padding: 1.15em;
-  text-align: right;
+  background: linear-gradient(var(--color-main), white);
+  margin: 0.5rem;
+  padding: 0.5rem;
   font-size: 2em;
-  color: #605554;
+  color: var(--text-main);
+  border-radius: 15px;
 }
 
-.heroText {
-  /* background: rgba(0, 0, 0, 0.3); */
-  padding: 1.15em;
+.hero h1 {
+  margin: 1rem;
 }
 
-.heroText p {
-  font-size: 1em;
+.aboutText {
+  text-align: left;
 }
+
+.heroText p,
+.heroText li,
+.aboutText,
+.aboutText li {
+  font-size: 0.8em;
+}
+
+/* Card Wrapper - Home */
+.cardWrap {
+  margin: 0;
+  /* padding: 0 2rem 2rem 2rem; */
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-column-gap: 2rem;
+  place-items: center;
+}
+
+.card {
+  background: whitesmoke;
+  text-align: center;
+  font-size: 1rem;
+  padding: 0 1rem;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border-radius: 15px 50px;
+}
+
+.cardFade {
+  opacity: 0.4;
+}
+
+.card h3 {
+  font-size: 1.5rem;
+}
+
+.card img {
+  /* object-fit: cover; */
+  width: 100%;
+}
+
 /*  ~ END ~ Main*/
 
 /* Footer */
@@ -104,5 +159,112 @@ a:visited {
   height: 12vh;
   border-top: 3px solid white;
   text-align: center;
-  color: white;
+  color: var(--text-hover);
+}
+
+/* 1400px and larger */
+@media (min-width: 1470px) {
+  .card {
+    font-size: 1.33rem;
+  }
+}
+
+/* 1160px and smaller */
+@media (max-width: 1160px) {
+  nav {
+    margin: 0.5rem 0.5em 1rem 0.5rem;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-areas: 'site links';
+    font-size: 1.5rem;
+  }
+
+  .main {
+    height: 80vh;
+    overflow: scroll;
+  }
+
+  .hero {
+    height: 100%;
+  }
+
+  .heroText {
+    display: none;
+  }
+  /* Home Page cards */
+  .cardWrap {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, 1fr);
+    grid-row-gap: 2rem;
+    place-items: center;
+  }
+
+  .card {
+    padding: 0;
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas:
+      'img cta'
+      'img txt';
+  }
+
+  .card img {
+    grid-area: img;
+    border-radius: 15px 0 0 50px;
+  }
+
+  .card h3 {
+    grid-area: cta;
+    align-self: end;
+    font-size: 2rem;
+  }
+
+  .card p {
+    grid-area: txt;
+    display: inline-block;
+    margin: 0 1rem;
+    align-self: center;
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 835px) {
+  .nav {
+    grid-template-columns: 5fr 2fr;
+    grid-template-areas: 'site links';
+  }
+
+  #siteNav {
+    align-self: center;
+    font-size: 1.2rem;
+  }
+
+  #extLinks .fab {
+    font-size: 1.5rem;
+  }
+
+  .card {
+    grid-template-rows: 1fr;
+  }
+
+  .card h3 {
+    align-self: center;
+  }
+
+  .card p {
+    display: none;
+  }
+}
+
+@media(max-width: 670px) {
+  #contact {
+    display: none;
+  }
+  
+  .card h3 {
+   font-size: 1.47rem;
+  }
+
+
 }
